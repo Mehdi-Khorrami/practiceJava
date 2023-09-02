@@ -9,8 +9,8 @@ import java.util.Random;
 
 public class OperationArray {
 
-    public static Long sum(ArrayList<Integer> arr){
-        if ( arr == null || arr.isEmpty()  ) {
+    public static Long sum(int[] arr){
+        if ( arr == null || arr.length == 0 ) {
             return null;
         }
 
@@ -21,8 +21,8 @@ public class OperationArray {
         return sum;
     }
 
-    public static double average(ArrayList<Integer> arr){
-        return sum(arr) / arr.size();
+    public static double average(int[] arr){
+        return sum(arr) / arr.length;
     }
 
     public static int[] remove(int[] arr ,  int index){

@@ -22,9 +22,7 @@ public class Main {
 
         //System.out.println(Arrays.toString(a));
 
-
-
-        ArrayList<Integer> arr = scanner();
+        int[] arr = scanner();
         doOperation(arr);
 
 
@@ -32,13 +30,20 @@ public class Main {
 
     }
 
-    private static void doOperation(ArrayList<Integer> arr) {
+    private static void doOperation(int[] arr) {
         boolean shouldBreak = false;
         while (!shouldBreak) {
             System.out.println("Select one of below commands");
             System.out.println("0) Quit");
             System.out.println("1) Average");
             System.out.println("2) Sum");
+            System.out.println("3) remove");
+            System.out.println("4) max");
+            System.out.println("5) min");
+            System.out.println("6) sort");
+            System.out.println("7) subArray");
+            System.out.println("8) reverse");
+            System.out.println("9) indexOf");
 
             Scanner scanner = new Scanner(System.in);
             int i = scanner.nextInt();
@@ -54,24 +59,59 @@ public class Main {
                     Long sum = OperationArray.sum(arr);
                     System.out.println("Sum is " + sum);
                 }
+                case 3 -> {
+                    System.out.println("plesea enter index ");
+                    int l = scanner.nextInt();
+                    int[] remove = OperationArray.remove(arr ,l );
+                    System.out.println("remove is" + Arrays.toString(remove) );
+                }
+                case 4 -> {
+                    Integer max = OperationArray.max(arr);
+                    System.out.println("max is " + max );
+                }
+                case 5 -> {
+                    Integer min = OperationArray.min(arr);
+                    System.out.println("min is " + min );
+                }
+                case 6 -> {
+                    int[] sort = OperationArray.sort(arr);
+                    System.out.println("sort is " + Arrays.toString(sort) );
+                }
+                case 7 -> {
+                    System.out.println("enter from");
+                    int from = scanner.nextInt();
+                    System.out.println("enter to ");
+                    int to = scanner.nextInt();
+                    int[] subArray = OperationArray.subArray(arr , from , to);
+                    System.out.println("subArray is " + Arrays.toString(subArray) );
+                }
+                case 8 -> {
+                    int[] re = OperationArray.reverse(arr);
+                    System.out.println(" revers is  " + Arrays.toString(re));
+                }
+                case 9 -> {
+                    System.out.println("plese enter item");
+                    int item = scanner.nextInt();
+                    int re = OperationArray.indexOf(arr , item);
+                    System.out.println(" index of is  " + re);
+                }
                 default -> System.err.println("Invalid input");
             }
         }
     }
 
-    private static ArrayList<Integer> scanner() {
+    private static int[] scanner() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Input Array items ");
-        String s = scanner.nextLine();
-        String[] strings = s.split(" ");
-        ArrayList<Integer> ints = new ArrayList<>();
-
-        for (String string : strings) {
-            ints.add(Integer.parseInt(string));
+        System.out.println("Input size of array");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("Input the " + (i + 1) + "th number");
+            arr[i] = scanner.nextInt();
         }
-        System.out.println("Input is " + ints);
-        return ints;
+
+        System.out.println("Input is " + Arrays.toString(arr));
+        return arr;
     }
 }
-
 
