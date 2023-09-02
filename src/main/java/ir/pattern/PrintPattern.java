@@ -1,4 +1,4 @@
-package com.pattern;
+package ir.pattern;
 
 public class PrintPattern {
 
