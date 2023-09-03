@@ -1,15 +1,13 @@
 package ir;
 
-import ir.arrayindex.ArrayIndex;
-import ir.binarysearch.BinarySearch;
+import ir.calculator.StringCalculator;
 import ir.operationinarray.OperationArray;
-import ir.pattern.PrintPattern;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
 
         //int[] a = new int[]{ 22 , 20 , 15 , 1 ,  9  , 12 , 5 , 25  , 46 };
@@ -22,12 +20,14 @@ public class Main {
 
         //System.out.println(Arrays.toString(a));
 
-        int[] arr = scanner();
-        doOperation(arr);
+        //int[] arr = scanner();
+        //doOperation(arr);
 
+        //String[] arr = new String[]{"ghbfh" , "ali" , "ali"};
 
-
-
+        //StringCalculator stringCalculator = new StringCalculator(arr);
+        //stringCalculator.subArray(1 , 2);
+        //System.out.println(stringCalculator.toString());
     }
 
     private static void doOperation(int[] arr) {
