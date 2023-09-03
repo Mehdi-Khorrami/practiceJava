@@ -44,6 +44,7 @@ public class Main {
             System.out.println("7) subArray");
             System.out.println("8) reverse");
             System.out.println("9) indexOf");
+            System.out.println("10) contains");
 
             Scanner scanner = new Scanner(System.in);
             int i = scanner.nextInt();
@@ -87,13 +88,19 @@ public class Main {
                 }
                 case 8 -> {
                     int[] re = OperationArray.reverse(arr);
-                    System.out.println(" revers is  " + Arrays.toString(re));
+                    System.out.println("revers is  " + Arrays.toString(re));
                 }
                 case 9 -> {
                     System.out.println("plese enter item");
                     int item = scanner.nextInt();
                     int re = OperationArray.indexOf(arr , item);
-                    System.out.println(" index of is  " + re);
+                    System.out.println("index of is  " + re);
+                }
+                case 10 -> {
+                    System.out.println("plese enter item");
+                    int item = scanner.nextInt();
+                    boolean re = OperationArray.contains(arr , item);
+                    System.out.println("contains  is  " + re);
                 }
                 default -> System.err.println("Invalid input");
             }
